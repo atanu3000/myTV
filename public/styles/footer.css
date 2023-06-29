@@ -1,0 +1,51 @@
+footer {
+    background: #222;
+    width: 100vw;
+    position: relative;
+    bottom: 0;
+}
+
+footer .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    color: #ddd;
+    padding: 2em;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+footer ul li {
+    list-style: none;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+footer h3 {
+    color: #ccc;
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+    margin-bottom: 1.5em;
+}
+
+footer h3::after {
+    content: '';
+    background: #ff0000;
+    width: 2.8em;
+    height: 0.22em;
+    border-radius: 1em;
+}
+
+footer .content .social ul {
+    flex-direction: row;
+    gap: 1em;
+}
+
+footer .content .social ul li {
+    font-size: 1.8em;
+}

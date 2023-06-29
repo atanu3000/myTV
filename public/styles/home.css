@@ -1,0 +1,71 @@
+.preview .action {
+    position: relative;
+    z-index: 1;
+    left: 4em;
+}
+
+.preview .action .title {
+    position: relative;   
+    font-size: 2em;
+    color: #fff;
+}
+
+.preview .action .title span {
+    font-size: 2.5em;
+}
+
+.preview .action .title span {
+    font-weight: 600;
+    display: block;
+}
+
+.preview .action .btn {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.preview .action .btn > * {
+    position: relative;
+    padding: 0.5em 1.2em;
+    border-radius: 30px;
+    background: #fff;
+    color: #ff0000;
+    border: 2px solid #ff0000;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.preview .action .btn button:nth-child(1) {
+    background: #ff0000;
+    border: none;
+    color: #fff;
+}
+
+.preview .action .btn button:nth-child(1) span {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.preview .action .btn button:nth-child(1) span ion-icon {
+    font-size: 1.5em;
+}
+
+.preview {
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+}
+.preview .poster {
+    height: 80vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.preview .poster  img {
+    width: 100vw;
+    height: 100%;
+}

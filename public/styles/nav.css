@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;500;600&family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard syntax */
+}
+
+body {
+    background: #010c39;
+}
+
+nav {
+    position: relative;
+    background: #5b66c62f;
+    padding: 7px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    backdrop-filter: blur(3px);
+}
+
+nav .logo {
+    display: flex;
+    gap: 0.6em;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+}
+
+nav .logo ion-icon {
+    font-size: 1.8em;
+    color: #ff0000;
+}
+
+nav .logo h3 span {
+    color: #ff0000;
+    font-size: 1.2em;
+}
+
+nav ul {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+nav ul:nth-child(2) {
+    gap: 2em;
+}
+
+nav ul li {
+    list-style: none;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: 600;
+    color: #fff;
+}
+
+#search {
+    border-radius: 50%;
+    padding: 0.5em;
+    color: #ff0000;
+    font-size: 1.2em;
+    border: 3px solid #ff0000;
+}
+
+#profile {
+    background: #ff0000;
+    border-radius: 50%;
+    padding: 0.5em;
+    color: #fff;
+    font-size: 1.2em;
+}
