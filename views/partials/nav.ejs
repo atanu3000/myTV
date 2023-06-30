@@ -11,7 +11,25 @@
         <li>Coming</li>
     </ul>
     <ul>
-        <li><ion-icon id="search" name="search"></ion-icon></li>
-        <li><ion-icon id="profile" name="person-outline"></ion-icon></li>
+        <li>
+            <div class="searchBar">
+                <ion-icon id="search" name="search"></ion-icon>
+                <div class="input">
+                  <input type="text" placeholder="search" id="mySearch">
+                </div>
+                <div class="cross"><ion-icon name="close"></ion-icon></div>
+            </div>
+        </li>
+        <li>
+            <div class="profile"><ion-icon id="profile" name="person-outline"></ion-icon></div></ion-icon>
+        </li>
     </ul>
 </nav>
+
+<script>
+    const search = document.querySelector('#search');
+    const searchBar = document.querySelector('.searchBar');
+    const cross = document.querySelector('.cross');
+    search.addEventListener('click', () => searchBar.classList.add('active')); // add active class with the searchBar
+    cross.addEventListener('click', () => searchBar.classList.remove('active')); // remove active class from the searchBar
+</script>
