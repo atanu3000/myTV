@@ -2,7 +2,9 @@ const express = require('express');
 const app = express();
 
 app.set("view engine", "ejs");
-app.use(express.static("public"));
+// app.use(express.static("public"));
+// const path = require('path');
+app.use(express.static(__dirname + '/public'));
 
 const fetch = require('node-fetch');
 
@@ -20,8 +22,29 @@ fetch(url, options)
   .then()
   .catch(err => console.error('error:' + err));
 
+const dataSet = [
+  {
+    type: "latest_releases",
+    head: "Latest Releases",
+  },
+  {
+    type: "trending_movies",
+    head: "Trending Movies",
+
+  },
+  {
+    type: "popular_shows",
+    head: "Popular Shows"
+  },
+];
+
 app.get('/', (req, res) => {
-  res.render("home", { title: "Home"});
+  res.render("home", { title: "Home", data: dataSet});
+});
+
+app.get('/view_more/:type', (req, res) => {
+  let type = req.params.type;
+  res.render("view_more", { title: type, heading: type.split('_').join(' ')});
 });
 
 app.listen(3000, () => {

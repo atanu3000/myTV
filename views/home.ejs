@@ -17,6 +17,25 @@
                 <img src="images/poster3.jpg" alt="poster" />
             </div>
         </div>
+        <% data.forEach(data => { %>
+            <div class="row">
+                <a href="/view_more/<%= data.type%>"><h2><%= data.head%></h2></a>
+                <div class="cards">
+                    <%for(let i = 1; i <= 6; i++) { %>
+                    <div class="card">
+                        <img src="images/poster4.jpg" alt="">
+                        <div class="btn">
+                            <button> <span><ion-icon name="play"></ion-icon></span> Watch Now</button>
+                            <button><ion-icon name="add"></ion-icon></button>
+                        </div>
+                        <div class="details">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, nostrum.</p>
+                        </div>
+                    </div>
+                    <% } %>
+                </div>
+            </div>
+        <% }); %>
         <%- include("./partials/footer.ejs")%>
     </body>
 </html>
