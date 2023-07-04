@@ -37,24 +37,4 @@
     nomodule
     src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
 ></script>
-<script>
-    const search = document.querySelector('#search');
-    const searchBar = document.querySelector('.searchBar');
-    const cross = document.querySelector('.cross');
-    search.addEventListener('click', () => searchBar.classList.add('active')); // add active class with the searchBar
-    cross.addEventListener('click', () => searchBar.classList.remove('active')); // remove active class from the searchBar
-    const scrollTop = document.querySelector('.top');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 0) {
-            scrollTop.classList.add('active');
-        } else {
-            scrollTop.classList.remove('active');
-        }
-    });
-    scrollTop.addEventListener('click', () => {       
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-</script>
+<script src="/scripts/script.js"></script>

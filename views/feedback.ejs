@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs")%>
+    <body>
+        <%- include("./partials/nav.ejs")%>
+        <div class="feedback">
+            <div>
+                <h2><ion-icon name="megaphone-outline"></ion-icon>give us feedback</h2>
+                <form action="">
+                    <div>
+                        <label for="email">email</label>
+                        <input type="email" name="email" id="" placeholder="jhon@gmail.com" required/>
+                    </div>
+                    <div>
+                        <label for="subject">subject <span>(optional)</span></label>
+                        <input type="text" name="subject" id="" placeholder="Summary of your observation"/>
+                    </div>
+                    <div>
+                        <label for="message">message</label>
+                        <textarea name="message" id="" cols="30" rows="3" placeholder="Give your details message" required
+                        ></textarea>
+                    </div>
+                    <div>
+                        <input type="submit" id="f_submit"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <%- include("./partials/footer.ejs")%>
+    </body>
+</html>

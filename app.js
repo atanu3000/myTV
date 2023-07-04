@@ -47,6 +47,22 @@ app.get('/view_more/:type', (req, res) => {
   res.render("view_more", { title: type, heading: type.split('_').join(' ')});
 });
 
+app.get('/library', (req, res) => {
+  res.render("library", { title: "Library" });
+})
+
+app.get('/support', (req, res) => {
+  res.render("support", { title: "Support" });
+})
+
+app.get('/setting', (req, res) => {
+  res.render("setting", { title: "Setting" });
+})
+
+app.get('/feedback', (req, res) => {
+  res.render("feedback", { title: "Feedback" });
+})
+
 app.listen(3000, () => {
   console.log("server running at http://localhost:3000");
 })
