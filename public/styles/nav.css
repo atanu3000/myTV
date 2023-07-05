@@ -82,6 +82,11 @@ nav ul li {
     color: #fff;
 }
 
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
 .searchBar {
     position: relative;
     width: 40px;
@@ -187,6 +192,7 @@ nav ul li {
     gap: 1em;
     border-bottom: 1px solid #999;
     padding: 1.5em;
+    cursor: auto;
 }
 
 .p_menu ul li p {
