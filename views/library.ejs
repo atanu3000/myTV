@@ -3,7 +3,46 @@
     <%- include("./partials/head.ejs")%>
     <body>
         <%- include("./partials/nav.ejs")%>
-        
+        <div class="row">
+            <div class="head">
+                <h2><a href="/view_more/watch_later"><ion-icon name="time-outline"></ion-icon>watch later</a></h2>
+                <a id="view_all" href="/view_more/watch_later">view all </a>
+            </div>
+            <div class="cards">
+                <%for(let i = 1; i <= 6; i++) { %>
+                <div class="card">
+                    <img src="images/poster4.jpg" alt="">
+                    <div class="btn">
+                        <button> <span><ion-icon name="play"></ion-icon></span> Watch Now</button>
+                        <button><ion-icon name="add"></ion-icon></button>
+                    </div>
+                    <div class="details">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, nostrum.</p>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+        </div>
+        <div class="row">
+            <div class="head">
+                <h2><a href="/view_more/liked_videoes"><ion-icon name="thumbs-up-sharp"></ion-icon>liked videoes</a></h2>
+                <a id="view_all" href="/view_more/liked_videoes">view all </a>
+            </div>
+            <div class="cards">
+                <%for(let i = 1; i <= 6; i++) { %>
+                <div class="card">
+                    <img src="images/poster4.jpg" alt="">
+                    <div class="btn">
+                        <button> <span><ion-icon name="play"></ion-icon></span> Watch Now</button>
+                        <button><ion-icon name="add"></ion-icon></button>
+                    </div>
+                    <div class="details">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, nostrum.</p>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+        </div>
         <%- include("./partials/footer.ejs")%>
     </body>
 </html>

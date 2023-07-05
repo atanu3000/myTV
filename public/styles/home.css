@@ -92,6 +92,11 @@ button:hover {
     border-bottom: 2px solid #666;
 }
 
+.head h2 ion-icon {
+    margin-right: 0.5em;
+    font-size: 1em;
+}
+
 .row .head #view_all {
     padding: 0.5em 1em;
     border-radius: 20px;
@@ -108,13 +113,13 @@ button:hover {
     position: relative;
     text-decoration: none;
     color: #eee;
-    /* left: 20px; */
     text-transform: capitalize;
 }
 
 .container h2 {
     text-align: center;
     margin: 2em 0;
+    font-weight: 400;
 }
 
 .row a h2 {
