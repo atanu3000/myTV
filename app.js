@@ -1,12 +1,33 @@
 const express = require('express');
+const mongoose = require('mongoose');
+
+const Feedback = require("./models/feedback");
+
+// initiating express
 const app = express();
 
+// link to database
+const dbURL = "mongodb+srv://atanupaul03:UlzBd1x6xOTUdirq@cluster0.jinklwv.mongodb.net/?retryWrites=true&w=majority";
+// mongoose
+//   .connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
+//   .then(() =>
+
+//   )
+//   .catch((error) => console.log(error));
+
+app.listen(3000, () => {
+  console.log("Connection to the Database was established!");
+  console.log("server running at http://localhost:3000");
+});
+
+// Middlewares
+app.use(express.json()); // JSON Parser
+app.use(express.urlencoded({ extended: true })); // URL Body Parser
+
 app.set("view engine", "ejs");
-// app.use(express.static("public"));
-// const path = require('path');
 app.use(express.static(__dirname + '/public'));
 
-const fetch = require('node-fetch');
+// const fetch = require('node-fetch');
 
 // const url = 'https://api.themoviedb.org/3/account/20080192';
 const url = 'https://api.themoviedb.org/3/search/tv?api_key=846611ee4524dae289850750385dfbd8&query=mr.%20robot';
@@ -39,12 +60,12 @@ const dataSet = [
 ];
 
 app.get('/', (req, res) => {
-  res.render("home", { title: "Home", data: dataSet});
+  res.render("home", { title: "Home", data: dataSet });
 });
 
 app.get('/view_more/:type', (req, res) => {
   let type = req.params.type;
-  res.render("view_more", { title: type, heading: type.split('_').join(' ')});
+  res.render("view_more", { title: type, heading: type.split('_').join(' ') });
 });
 
 app.get('/library', (req, res) => {
@@ -63,6 +84,20 @@ app.get('/feedback', (req, res) => {
   res.render("feedback", { title: "Feedback" });
 })
 
-app.listen(3000, () => {
-  console.log("server running at http://localhost:3000");
+app.post('/submitFeedback', (req, res) => {
+  let feedback = new Feedback({
+    email: req.body.email,
+    subject: req.body.subject,
+    message: req.body.message
+  });
+  feedback
+    .save()
+    .then(() => res.send("success"))
+    .catch((error) => res.json({msg : error.feedback}));
+});
+
+app.get('/deleteMsg', (req, res) => {
+  Feedback.deleteMany()
+  .then(() => res.json ({msg: 'success'}))
+  .catch((error) => res.json({msg : error.feedback}));
 })

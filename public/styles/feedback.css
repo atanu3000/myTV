@@ -12,7 +12,7 @@
 .feedback {
     display: flex;
     justify-content: center;
-    padding: 10vh 2em;
+    padding: 3.5em 2em;
     text-transform: capitalize;
     color: #eee;
     min-height: 80vh;
@@ -28,10 +28,12 @@
     align-items: center;
     color: #fff;
     text-shadow: 1px 1px 3px #333;
+    letter-spacing: 2px;
+    word-spacing: 2px;
 }
 
 .feedback h2 ion-icon {
-    margin-right: 1em;
+    margin-right: 0.5em;
     font-size: 1.3em;
 }
 
