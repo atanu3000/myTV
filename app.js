@@ -8,17 +8,17 @@ const app = express();
 
 // link to database
 const dbURL = "mongodb+srv://atanupaul03:UlzBd1x6xOTUdirq@cluster0.jinklwv.mongodb.net/?retryWrites=true&w=majority";
-// mongoose
-//   .connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
-//   .then(() =>
+mongoose
+  .connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() =>
+    app.listen(3000, () => {
+      console.log("Connection to the Database was established!");
+      console.log("server running at http://localhost:3000");
+    })
+  )
+  .catch((error) => console.log(error));
 
-//   )
-//   .catch((error) => console.log(error));
 
-app.listen(3000, () => {
-  console.log("Connection to the Database was established!");
-  console.log("server running at http://localhost:3000");
-});
 
 // Middlewares
 app.use(express.json()); // JSON Parser
@@ -93,11 +93,11 @@ app.post('/submitFeedback', (req, res) => {
   feedback
     .save()
     .then(() => res.send("success"))
-    .catch((error) => res.json({msg : error.feedback}));
+    .catch((error) => res.json({ msg: error.feedback }));
 });
 
 app.get('/deleteMsg', (req, res) => {
   Feedback.deleteMany()
-  .then(() => res.json ({msg: 'success'}))
-  .catch((error) => res.json({msg : error.feedback}));
+    .then(() => res.json({ msg: 'success' }))
+    .catch((error) => res.json({ msg: error.feedback }));
 })
