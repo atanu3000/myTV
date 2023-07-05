@@ -19,7 +19,10 @@
         </div>
         <% data.forEach(data => { %>
             <div class="row">
-                <a href="/view_more/<%= data.type%>"><h2><%= data.head%></h2></a>
+                <div class="head">
+                    <h2><a href="/view_more/<%= data.type%>"><%= data.head%></a></h2>
+                    <a id="view_all" href="/view_more/<%= data.type%>">view all </a>
+                </div>
                 <div class="cards">
                     <%for(let i = 1; i <= 6; i++) { %>
                     <div class="card">

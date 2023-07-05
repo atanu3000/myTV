@@ -84,12 +84,31 @@ button:hover {
     width: 100vw;
 }
 
+.row .head {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-items: center;
+    border-bottom: 2px solid #666;
+}
+
+.row .head #view_all {
+    padding: 0.5em 1em;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.row .head #view_all:hover {
+    background: #7f7f7f5a;
+
+}
+
 .row a,
 .container h2 {
     position: relative;
     text-decoration: none;
     color: #eee;
-    left: 20px;
+    /* left: 20px; */
     text-transform: capitalize;
 }
 
