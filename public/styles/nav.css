@@ -165,6 +165,7 @@ nav ul li a {
     width: 300px;
     overflow: hidden;
     border: 2px solid #333;
+    z-index: 1000;
 }
 
 .p_menu.active {

@@ -1,4 +1,4 @@
-.feedback::before {
+.form_container::before {
     content: '';
     position: absolute;
     height: 95vh;
@@ -9,7 +9,7 @@
     border-radius: 63% 15% 48% 0% / 17% 13% 66% 0% ;
 }
 
-.feedback {
+.form_container {
     display: flex;
     justify-content: center;
     padding: 3.5em 2em;
@@ -19,11 +19,11 @@
     transition: 0.5s;
 }
 
-.feedback div {
+.form_container div {
     position: relative;
-    z-index: 1000;
+    z-index: 1;
 }
-.feedback h2,
+.form_container h2,
 .head h2 a,
 .container h2 {
     display: flex;
@@ -35,12 +35,12 @@
     word-spacing: 2px;
 }
 
-.feedback h2 ion-icon {
+.form_container h2 ion-icon {
     margin-right: 0.5em;
     font-size: 1.3em;
 }
 
-.feedback form {
+.form_container form {
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -52,11 +52,11 @@
     border-radius: 5px;
 }
 
-.feedback form div > *{
+.form_container form div > *{
     display: block;
 }
 
-.feedback form  input, textarea {
+.form_container form  input, textarea {
     width: 100%;
     margin-top: 0.5em;
     margin-bottom: 1.5em;
@@ -69,17 +69,22 @@
     background: #fff;
 }
 
-.feedback form label {
+.form_container.signup form input, textarea{
+    margin-bottom: 0.5em;
+}
+
+.form_container form label {
     color: #333;
     font-size: 1.1em;
 }
 
-.feedback form label span {
+.form_container form label span {
     font-size: 0.8em;
     color: #666;
 }
 
-#f_submit {
+#f_submit,
+#signup {
     background: #ff0000;
     color: #fff;
     font-weight: 600;
@@ -87,6 +92,8 @@
     margin-bottom: 0;
 }
 
-#f_submit:hover {
+#f_submit:hover,
+#singup:hover {
     box-shadow: none;
 }
+

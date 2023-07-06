@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const Feedback = require("./models/feedback");
+const UserData = require("./models/signup");
 
 // initiating express
 const app = express();
@@ -26,6 +27,7 @@ app.use(express.urlencoded({ extended: true })); // URL Body Parser
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/model'));
 
 // const fetch = require('node-fetch');
 
@@ -101,3 +103,19 @@ app.get('/deleteMsg', (req, res) => {
     .then(() => res.json({ msg: 'success' }))
     .catch((error) => res.json({ msg: error.feedback }));
 })
+
+app.get('/signup', (req, res) => {
+  res.render("signup", { title: "Signup" });
+});
+
+app.post('/submitForm', (req, res) => {
+  let signup = new UserData({
+    name: req.body.name,
+    email: req.body.email,
+    password: req.body.password
+  });
+  signup
+    .save()
+    .then(() => res.redirect('/'))
+    .catch(err => res.json({msg: err.message}));
+});

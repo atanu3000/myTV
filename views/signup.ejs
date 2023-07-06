@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs")%>
+    <body>
+        <%- include("./partials/nav.ejs")%>
+        <div class="form_container signup">
+            <div>
+                <h2><ion-icon name="log-in-outline"></ion-icon>signup</h2>
+                <form action="/submitForm" method="POST">
+                    <div>
+                        <label for="name">name</label>
+                        <input type="name" name="name" id="" placeholder="John Doe" required/>
+                    </div>
+                    <div>
+                        <label for="email">email</label>
+                        <input type="email" name="email" id="" placeholder="name@gmail.com" required/>
+                    </div>
+                    <div>
+                        <label for="password">password</label>
+                        <input type="password" name="password" id="" placeholder="password" required/>
+                    </div>
+                    <div>
+                        <label for="password">confirm password</label>
+                        <input type="password" name="cPassword" id="" placeholder="confirm password" required/>
+                    </div>
+                    
+                    <div>
+                        <input type="submit" id="signup"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <%- include("./partials/footer.ejs")%>
+    </body>
+</html>
