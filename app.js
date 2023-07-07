@@ -29,9 +29,8 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/model'));
 
-// const fetch = require('node-fetch');
+const fetch = require('node-fetch');
 
-// const url = 'https://api.themoviedb.org/3/account/20080192';
 const url = 'https://api.themoviedb.org/3/search/tv?api_key=846611ee4524dae289850750385dfbd8&query=mr.%20robot';
 const options = {
   method: 'GET',
