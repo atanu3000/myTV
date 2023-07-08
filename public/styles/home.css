@@ -1,3 +1,10 @@
+.preview {
+    width: 100vw;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+}
+
 .preview .action {
     position: relative;
     z-index: 1;
@@ -61,12 +68,6 @@ button:hover {
     font-size: 1.5em;
 }
 
-.preview {
-    width: 100vw;
-    height: 80vh;
-    display: flex;
-    align-items: center;
-}
 .preview .poster {
     height: 80vh;
     width: 100%;
