@@ -103,11 +103,15 @@ app.get('/deleteMsg', (req, res) => {
     .catch((error) => res.json({ msg: error.feedback }));
 })
 
-app.get('/signup', (req, res) => {
-  res.render("signup", { title: "Signup" });
+app.get('/login', (req, res) => {
+  res.render("signup", { title: "Login" });
 });
 
-app.post('/submitForm', (req, res) => {
+app.get('/signup', (req, res) => {
+  res.redirect('/login');
+});
+
+app.post('/signupForm', (req, res) => {
   let signup = new UserData({
     name: req.body.name,
     email: req.body.email,
@@ -115,6 +119,10 @@ app.post('/submitForm', (req, res) => {
   });
   signup
     .save()
-    .then(() => res.redirect('/'))
+    .then(() => res.redirect('/login'))
     .catch(err => res.json({msg: err.message}));
+});
+
+app.use((req, res) => {
+  res.status(404).render('error', { title: 'Error'});
 });

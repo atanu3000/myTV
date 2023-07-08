@@ -6,12 +6,7 @@ search.addEventListener('click', () => searchBar.classList.add('active')); // ad
 cross.addEventListener('click', () => searchBar.classList.remove('active')); // remove active class from the searchBar
 
 const p_menu = document.querySelector(".p_menu");
-// const p_list = document.querySelectorAll(".p_menu li");
 profile.addEventListener('click', () => p_menu.classList.toggle('active'));
-// body.addEventListener('click', () => p_menu.classList.remove('active'));
-// p_list.forEach((list) => {
-//     list.addEventListener('click', () => p_menu.classList.remove('active'));
-// });
 
 const scrollTop = document.querySelector('.top');
 window.addEventListener('scroll', () => {
@@ -27,3 +22,24 @@ scrollTop.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
+
+// Function to toggle between login and signup forms
+const toggleForms = () => {
+    var loginForm = document.getElementById('login-form');
+    var signupForm = document.getElementById('signup-form');
+
+    if (loginForm.style.display === 'none') {
+        loginForm.style.display = 'flex';
+        signupForm.style.display = 'none';
+    } else {
+        loginForm.style.display = 'none';
+        signupForm.style.display = 'flex';
+    }
+};
+
+// Add event listeners to the login and signup links
+var loginLink = document.getElementById('login-link');
+var signupLink = document.getElementById('signup-link');
+
+loginLink.addEventListener('click', toggleForms);
+signupLink.addEventListener('click', toggleForms);

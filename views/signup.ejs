@@ -5,10 +5,25 @@
         <%- include("./partials/nav.ejs")%>
         <div class="form_container signup">
             <div>
-                <h2><ion-icon name="log-in-outline"></ion-icon>signup</h2>
-                <form action="/submitForm" method="POST">
+                <form id="login-form" action="" method="">
                     <div>
-                        <label for="name">name</label>
+                        <label for="email">username or email</label>
+                        <input type="email" name="email" id="" placeholder="name@gmail.com" required/>
+                    </div>
+                    <div>
+                        <label for="password">password</label>
+                        <input type="password" name="password" id="" placeholder="password" required/>
+                    </div>
+                    
+                    <div>
+                        <button type="submit" id="form_btn"><ion-icon name="log-in-outline"></ion-icon>Login</button>
+                        <p>Don't have an account? <span id="signup-link">Create account</span></p>
+                    </div>
+                </form>
+                
+                <form id="signup-form" action="/signupForm" method="POST">
+                    <div>
+                        <label for="name">username</label>
                         <input type="name" name="name" id="" placeholder="John Doe" required/>
                     </div>
                     <div>
@@ -25,7 +40,8 @@
                     </div>
                     
                     <div>
-                        <input type="submit" id="signup"/>
+                        <button type="submit" id="form_btn">Create Account</button>
+                        <p>Already have an account? <span id="login-link">Login</span></p>
                     </div>
                 </form>
             </div>

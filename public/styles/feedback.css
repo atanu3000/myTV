@@ -1,12 +1,12 @@
 .form_container::before {
-    content: '';
+    content: "";
     position: absolute;
     height: 95vh;
     width: 50vw;
     background: #ff0000;
     top: 5em;
     left: 0;
-    border-radius: 63% 15% 48% 0% / 17% 13% 66% 0% ;
+    border-radius: 63% 15% 48% 0% / 17% 13% 66% 0%;
 }
 
 .form_container {
@@ -14,7 +14,6 @@
     justify-content: center;
     padding: 3.5em 2em;
     text-transform: capitalize;
-    color: #eee;
     min-height: 80vh;
     transition: 0.5s;
 }
@@ -23,21 +22,21 @@
     position: relative;
     z-index: 1;
 }
-.form_container h2,
+.form_container form button,
 .head h2 a,
 .container h2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     color: #fff;
     text-shadow: 1px 1px 3px #333;
     letter-spacing: 2px;
     word-spacing: 2px;
 }
 
-.form_container h2 ion-icon {
+.form_container button ion-icon {
     margin-right: 0.5em;
-    font-size: 1.3em;
+    font-size: 1.7em !important;
 }
 
 .form_container form {
@@ -50,13 +49,16 @@
     backdrop-filter: blur(10px);
     padding: 2em;
     border-radius: 5px;
+    animation: fadeAnimation 0.5s ease-in-out;
 }
 
-.form_container form div > *{
+.form_container form div > * {
     display: block;
 }
 
-.form_container form  input, textarea {
+.form_container form input,
+.form_container form textarea,
+.form_container form button {
     width: 100%;
     margin-top: 0.5em;
     margin-bottom: 1.5em;
@@ -69,7 +71,9 @@
     background: #fff;
 }
 
-.form_container.signup form input, textarea{
+.form_container.signup form input,
+.form_container.signup form textarea,
+.form_container.signup form button {
     margin-bottom: 0.5em;
 }
 
@@ -83,8 +87,21 @@
     color: #666;
 }
 
+.form_container form p {
+    margin-top: 0.7em;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.form_container form p span {
+    padding-left: 0.5em;
+    color: rgb(85, 14, 226);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 #f_submit,
-#signup {
+#form_btn {
     background: #ff0000;
     color: #fff;
     font-weight: 600;
@@ -93,7 +110,21 @@
 }
 
 #f_submit:hover,
-#singup:hover {
+#form_btn:hover {
     box-shadow: none;
 }
 
+#signup-form {
+    display: none;
+}
+
+@keyframes fadeAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
