@@ -45,12 +45,12 @@ loginLink.addEventListener('click', toggleForms);
 signupLink.addEventListener('click', toggleForms);
 
 // to show and hide the password field
-let passwords = document.querySelectorAll('#password');
+let passwords = document.querySelectorAll('.password');
 let toggle_visibility = document.querySelectorAll('#toggle_visibility');
 
 toggle_visibility.forEach((element, index) => {
     let password = passwords[index];
-    element.addEventListener('click', function() {
+    element.addEventListener('click', function () {
         if (password.type === 'password') {
             password.type = 'text';
             this.name = 'eye-off';
@@ -61,19 +61,17 @@ toggle_visibility.forEach((element, index) => {
     });
 })
 
-
-
 // to show the password and confirm password is macth or not
-$(document).ready(function() {
-    $('#cPassword').on('input', function() {
-      let password = $('#password').val();
-      let confirmPassword = $(this).val();
-  
-      if (password === confirmPassword) {
-        $('#passwordMatch').text('Password match').css('color', 'green');
-      } else {
-        $('#passwordMatch').text('Password do not match').css('color', 'red');
-      }
+$(document).ready(function () {
+    $('#cPassword').on('input', function () {
+        const password = $('#sPassword').val();
+        let confirmPassword = $(this).val();
+        console.log(password)
+        console.log(confirmPassword);
+        if (password === confirmPassword) {
+            $('#passwordMatch').text('Password match').css('color', 'green');
+        } else {
+            $('#passwordMatch').text('Password do not match').css('color', 'red');
+        }
     });
-  });
-  
+});
