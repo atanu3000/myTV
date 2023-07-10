@@ -8,19 +8,19 @@ const UserData = require("./models/signup");
 const app = express();
 
 // link to database
-const dbURL = "mongodb+srv://atanupaul03:UlzBd1x6xOTUdirq@cluster0.jinklwv.mongodb.net/?retryWrites=true&w=majority";
-mongoose
-  .connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() =>
-    app.listen(3000, () => {
-      console.log("Connection to the Database was established!");
-      console.log("server running at http://localhost:3000");
-    })
-  )
-  .catch((error) => console.log(error));
+// const dbURL = "mongodb+srv://atanupaul03:UlzBd1x6xOTUdirq@cluster0.jinklwv.mongodb.net/?retryWrites=true&w=majority";
+// mongoose
+//   .connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
+//   .then(() =>
+    
+//   )
+//   .catch((error) => console.log(error));
 
 
-
+  app.listen(3000, () => {
+    console.log("Connection to the Database was established!");
+    console.log("server running at http://localhost:3000");
+  })
 // Middlewares
 app.use(express.json()); // JSON Parser
 app.use(express.urlencoded({ extended: true })); // URL Body Parser
@@ -112,11 +112,7 @@ app.get('/signup', (req, res) => {
 });
 
 app.post('/signupForm', (req, res) => {
-  let signup = new UserData({
-    name: req.body.name,
-    email: req.body.email,
-    password: req.body.password
-  });
+  let signup = new UserData(req.body);
   signup
     .save()
     .then(() => res.redirect('/login'))

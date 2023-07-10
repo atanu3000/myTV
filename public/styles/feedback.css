@@ -23,11 +23,13 @@
     z-index: 1;
 }
 .form_container form button,
+.form_container h2,
 .head h2 a,
 .container h2 {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    gap: 0.5em;
     color: #fff;
     text-shadow: 1px 1px 3px #333;
     letter-spacing: 2px;
@@ -35,7 +37,7 @@
 }
 
 .form_container button ion-icon {
-    margin-right: 0.5em;
+    /* margin-right: 0.5em; */
     font-size: 1.7em !important;
 }
 
@@ -118,6 +120,18 @@
     display: none;
 }
 
+#passwordMatch {
+    display: block;
+    font-size: 14px;
+  }
+
+#toggle_visibility {
+    position: absolute;
+    right: 1em;
+    top: 55%;
+    font-size: 1.2em;
+    cursor: pointer;
+}
 @keyframes fadeAnimation {
     0% {
         opacity: 0;
